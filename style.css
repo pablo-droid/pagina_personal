@@ -1,0 +1,84 @@
+body {
+    background-color: black;
+    background-image: url("https://64.media.tumblr.com/9e84631ecbc08f880148a8f1d76f6022/0373bd477afbe405-6d/s640x960/226740ef4c3f4f517b059c871430161d14f287b9.gifv");
+    font-family: "Comic Sans MS", "sans-serif";
+}
+
+.banner {
+    height: 50px;
+    padding: 10px;
+    background-image: url("https://images.steamusercontent.com/ugc/2421319307286993522/DBCDE752917E8703B62A2C1AFE7B337CB1CD14FD/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+}
+
+fr-nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("https://static.wixstatic.com/media/38ebb6_801bb3de90f04d9c9535e6034f0fa30d~mv2.jpg/v1/fill/w_261,h_261,q_90,enc_avif,quality_auto/38ebb6_801bb3de90f04d9c9535e6034f0fa30d~mv2.jpg");
+    padding: 10px;
+    margin: 10px 50px;
+    background-size: 800px 800px;
+    background-blend-mode: multiply;
+    background-color: rgb(255, 0, 98);
+    background-repeat: repeat;
+    list-style-type: none; 
+}
+
+fr-nav a {
+    color: orange;
+    font-weight: bold;
+}
+
+h1, p, label {
+    color: orange;
+}
+
+h2 {
+    color: greenyellow;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    row-gap: 20px;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: row;
+    border-style: dotted;
+    border-color: orange;
+}
+
+#welcome-image {
+    display: flex;
+    justify-content: center;
+}
+
+.add-wall {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#neco-arc {
+    background-image: url("https://i.redd.it/6u5ellqamjo91.gif");
+}
