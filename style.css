@@ -23,12 +23,14 @@ fr-nav ul {
     background-blend-mode: multiply;
     background-color: rgb(255, 0, 98);
     background-repeat: repeat;
-    list-style-type: none; 
+    list-style-type: none;
+    flex-wrap: wrap;
 }
 
 fr-nav a {
     color: orange;
     font-weight: bold;
+    font-size: 20px;
 }
 
 h1, p, label {
@@ -51,11 +53,34 @@ section {
     row-gap: 20px;
 }
 
+fieldset {
+    display: flex;
+    flex-direction: column;
+    border-style: dotted;
+    border-color: orange;
+    border-radius: 10px;
+}
+
+fieldset button {
+    width: max-content;
+}
+
 .info-box {
     display: flex;
     flex-direction: row;
     border-style: dotted;
     border-color: orange;
+    border-radius: 10px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.info-box p {
+    max-width: 500px;
+}
+
+.info-image {
+    padding: 10px;
 }
 
 #welcome-image {
@@ -79,6 +104,14 @@ section {
     flex-wrap: wrap;
 }
 
+#corp-image {
+    border-radius: 100%;
+}
+
 #neco-arc {
     background-image: url("https://i.redd.it/6u5ellqamjo91.gif");
+}
+
+a {
+    color: orangered;
 }

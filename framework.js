@@ -76,7 +76,9 @@ class FRAds extends HTMLElement {
         }
 
         for (let ad of chosenAdAds) {
+            htmlCodeString += `<a href="https://88x31.nl/" target="_blank" rel="noopener noreferrer">`;
             htmlCodeString += `<img src="${ad}" width="88" height="31">`;
+            htmlCodeString += `</a>`;
         }
 
         htmlCodeString += `</div>`;
@@ -85,3 +87,111 @@ class FRAds extends HTMLElement {
     }
 }
 customElements.define("fr-ads", FRAds);
+
+class FRDanmaku extends HTMLElement {
+    connectedCallback() {
+        this.danmakuSave = "danmaku_save";
+        this.currentDanmakuIndex = 0;
+        this.localDanmaku = [
+            "wwwwwwwwwwwwwwwwwww",
+            "hola",
+            "hola que tal",
+            "buenas soy Jhon Work, encantado de conocerte",
+            "bienvenido a mi pagina",
+            "saludos cordiales, mi estimado",
+            "(=^·ω·^=)ﾉ",
+            "ジョン・ワークへようこそ。本ウェブサイトへお越しいただき、誠にありがとうございます。"
+        ];
+
+        this.style.pointerEvents = "none";
+        this.style.touchAction = "none";
+        this.style.position = "fixed";
+        this.style.zIndex = 9999;
+        this.style.overflow = "hidden";
+        this.style.top = "0";
+        this.style.left = "0";
+        this.style.width = "100vw";
+        this.style.height = "100vh";
+
+        if (!document.getElementById("danmaku")) {
+            let danmakuStyle = document.createElement("style");
+            danmakuStyle.id = "danmaku";
+            danmakuStyle.textContent = `
+                @keyframes bullet_text_anim {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(calc(-100vw - 100%));
+                    }
+                }
+            `;
+            document.head.appendChild(danmakuStyle);
+        }
+
+        setInterval(() => {
+            let danmakuArray = [];
+
+            try {
+                danmakuArray = JSON.parse(localStorage.getItem(this.danmakuSave)) || [];
+            } catch(error) {
+                danmakuArray = [];
+            }
+
+            const DANMAKU_ARRAY = this.localDanmaku.concat(danmakuArray);
+            if (DANMAKU_ARRAY.length > 0) {
+                if (this.currentDanmakuIndex >= DANMAKU_ARRAY.length) {
+                this.currentDanmakuIndex = 0;
+                }
+                this.addBulletText(DANMAKU_ARRAY[this.currentDanmakuIndex]);
+                this.currentDanmakuIndex = (this.currentDanmakuIndex + 1) % DANMAKU_ARRAY.length;
+            }
+        }, 0.5 * 1000);
+    }
+
+    addBulletText(inText) {
+        let textDiv = document.createElement("div");
+        textDiv.textContent = inText;
+        textDiv.style.position = "absolute";
+        textDiv.style.whiteSpace = "nowrap";
+        textDiv.style.fontSize = "50px";
+        textDiv.style.fontWeight = "bold";
+        textDiv.style.color = "#ffffff";
+        textDiv.style.webkitTextStroke = "2px #000000";
+        textDiv.style.left = "100vw";
+        const RAND_LOCATION = Math.floor(Math.random() * (90 - 10 + 1)) + 10;
+        textDiv.style.top = `${RAND_LOCATION}%`;
+        textDiv.style.animation = "bullet_text_anim 5s linear forwards";
+        textDiv.addEventListener("animationend", () => {
+            textDiv.remove();
+        });
+
+        this.appendChild(textDiv);
+    }
+};
+customElements.define("fr-danmaku", FRDanmaku);
+
+const DANMAKU_FORM = document.getElementById("danmaku-form");
+
+if (DANMAKU_FORM != null) {
+    DANMAKU_FORM.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const TEXT = event.target.elements["danmaku-input"].value;
+        const DANMAKU = document.querySelector("fr-danmaku");
+
+        if (DANMAKU != null && TEXT !== "") {
+            DANMAKU.addBulletText(TEXT);
+
+            try {
+                let danmakuArray = JSON.parse(localStorage.getItem(DANMAKU.danmakuSave)) || [];
+                danmakuArray.push(TEXT);
+                localStorage.setItem(DANMAKU.danmakuSave, JSON.stringify(danmakuArray));
+            } catch(error) {
+                DANMAKU.localDanmaku.push(TEXT);
+            }
+        }
+
+        DANMAKU_FORM.reset();
+    });
+}

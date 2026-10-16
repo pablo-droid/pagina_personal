@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="framework.js" defer></script>
+    <link rel="icon" type="image/png" href="https://i.redd.it/6u5ellqamjo91.gif" sizes="32x32">
 </head>
 <body>
     <header class="banner"></header>
     <fr-nav></fr-nav>
+    <fr-danmaku></fr-danmaku>
     <main>
     <section>
         <fr-ads count="22"></fr-ads>
         <h1>Contacto</h1>
-        <form>
+        <form id="danmaku-form">
             <fieldset>
-                <div>
+                <!--<div>
                     <label for="email">e-mail</label>
                     <input type="email" id="email" required placeholder="tu e-mail">
-                </div>
+                </div>-->
                 <div>
-                    <label for="mesage">mensage</label>
-                    <textarea id="mesage" required placeholder="tu mensage"></textarea>
+                    <label for="danmaku-input">mensage</label>
+                    <textarea id="danmaku-input" required placeholder="tu mensage"></textarea>
                 </div>
                 <button type="submit">Enviar</button>
             </fieldset>
