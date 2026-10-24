@@ -2,7 +2,7 @@ class FRNavBar extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <nav>
-            <ul>
+            <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="biografia.html">Biografia</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
@@ -154,7 +154,7 @@ class FRDanmaku extends HTMLElement {
         textDiv.textContent = inText;
         textDiv.style.position = "absolute";
         textDiv.style.whiteSpace = "nowrap";
-        textDiv.style.fontSize = "50px";
+        textDiv.style.fontSize = "3rem";
         textDiv.style.fontWeight = "bold";
         textDiv.style.color = "#ffffff";
         textDiv.style.webkitTextStroke = "2px #000000";

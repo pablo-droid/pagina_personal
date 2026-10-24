@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: black;
     background-image: url("https://64.media.tumblr.com/9e84631ecbc08f880148a8f1d76f6022/0373bd477afbe405-6d/s640x960/226740ef4c3f4f517b059c871430161d14f287b9.gifv");
@@ -12,25 +18,10 @@ body {
     background-size: auto 100%;
 }
 
-fr-nav ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-image: url("https://static.wixstatic.com/media/38ebb6_801bb3de90f04d9c9535e6034f0fa30d~mv2.jpg/v1/fill/w_261,h_261,q_90,enc_avif,quality_auto/38ebb6_801bb3de90f04d9c9535e6034f0fa30d~mv2.jpg");
-    padding: 10px;
-    margin: 10px 50px;
-    background-size: 800px 800px;
-    background-blend-mode: multiply;
-    background-color: rgb(255, 0, 98);
-    background-repeat: repeat;
-    list-style-type: none;
-    flex-wrap: wrap;
-}
-
-fr-nav a {
+nav a {
     color: orange;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1rem;
 }
 
 h1, p, label {
@@ -39,6 +30,14 @@ h1, p, label {
 
 h2 {
     color: greenyellow;
+}
+
+h1, h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
 }
 
 section {
@@ -114,4 +113,26 @@ fieldset button {
 
 a {
     color: orangered;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("https://static.wixstatic.com/media/38ebb6_801bb3de90f04d9c9535e6034f0fa30d~mv2.jpg/v1/fill/w_261,h_261,q_90,enc_avif,quality_auto/38ebb6_801bb3de90f04d9c9535e6034f0fa30d~mv2.jpg");
+    padding: 10px;
+    margin: 10px 20px;
+    background-size: 800px 800px;
+    background-blend-mode: multiply;
+    background-color: rgb(255, 0, 98);
+    background-repeat: repeat;
+    list-style-type: none;
+    flex-wrap: wrap;
+}
+
+@media screen and (width >= 768px) {
+    .nav-list {
+        flex-direction: row;
+    }
 }
