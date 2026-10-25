@@ -1,36 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
     <link rel="stylesheet" href="style.css">
     <script src="framework.js" defer></script>
-    <link rel="icon" type="image/png" href="https://i.redd.it/6u5ellqamjo91.gif" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/neco_arc.webp" sizes="32x32">
 </head>
+
 <body>
-    <header class="banner"></header>
-    <fr-nav></fr-nav>
-    <fr-danmaku></fr-danmaku>
-    <main>
-    <section>
-        <fr-ads count="22"></fr-ads>
-        <h1>Contacto</h1>
-        <form id="danmaku-form">
-            <fieldset>
-                <!--<div>
-                    <label for="email">e-mail</label>
-                    <input type="email" id="email" required placeholder="tu e-mail">
-                </div>-->
-                <div>
-                    <label for="danmaku-input">mensage</label>
-                    <textarea id="danmaku-input" required placeholder="tu mensage"></textarea>
-                </div>
-                <button type="submit">Enviar</button>
-            </fieldset>
-        </form>
-        <fr-ads count="22"></fr-ads>
-    </section>
-    </main>
+    <div class="grid">
+        <header class="column-span banner banner-penguin"></header>
+        <nav class="column-span texture-box navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="biografia.html">Biografia</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <aside class="column-span">
+            <fr-ads count="16"></fr-ads>
+        </aside>
+        <main>
+            <section>
+                <h1 class="column-span title">Contacto</h1>
+                <section>
+                    <article class="column-large info-box">
+                        <div class="info-text">
+                            <p>Puedes escribir cosillas aqui y apareceran en pantalla.</p>
+                        </div>
+                    </article>
+                </section>
+                <form id="danmaku-form" class="column-large">
+                    <fieldset>
+                        <label for="danmaku-input">mensage</label>
+                        <textarea id="danmaku-input" required placeholder="tu mensage"></textarea>
+                        <button type="submit">Enviar</button>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+        <aside class="column-span">
+            <fr-ads count="16"></fr-ads>
+        </aside>
+        <footer class="column-span texture-box">
+            <p>&copy; 2049 John Work. Todos los derechos reservados.</p>
+            <a href="https://pablo-droid.github.io">johnwork@gmail.com</a>
+        </footer>
+        <fr-danmaku></fr-danmaku>
+    </div>
 </body>
+
 </html>

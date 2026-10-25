@@ -1,22 +1,6 @@
-class FRNavBar extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML = `
-        <nav>
-            <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="biografia.html">Biografia</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-        `;
-    }
-}
-customElements.define("fr-nav", FRNavBar);
-
 class FRAds extends HTMLElement {
     connectedCallback() {
-        const ADS = [
+        const ads = [
             "https://88x31.nl/gifs/000010.gif",
             "https://88x31.nl/gifs/cal_2.gif",
             "https://88x31.nl/gifs/168.gif",
@@ -57,19 +41,20 @@ class FRAds extends HTMLElement {
         ];
 
         let htmlCodeString = "";
-        htmlCodeString += `<div id="ads" class="add-wall">`;
+        htmlCodeString += `<div class="gallery">`;
 
-        let count = parseInt(this.getAttribute("count"), 10);
-        
-        const AD_NUM = !isNaN(count) ? count : 16;
-        if (AD_NUM > ADS.length) {
-            return;
-        }
-        
-        let tempAds = [...ADS];
-        let chosenAdAds = [];
+        const count = parseInt(this.getAttribute("count"), 10);
 
-        for (let i = 0; i < AD_NUM; i++) {
+        const ad_num = !isNaN(count) ? count : 16;
+
+        let tempAds = [...ads];
+        const chosenAdAds = [];
+
+        for (let i = 0; i < ad_num; i++) {
+            if (tempAds.length === 0) {
+                tempAds = [...ads];
+            }
+
             let index = Math.floor(Math.random() * tempAds.length);
             let chosenAd = tempAds.splice(index, 1)[0];
             chosenAdAds.push(chosenAd);
@@ -77,7 +62,7 @@ class FRAds extends HTMLElement {
 
         for (let ad of chosenAdAds) {
             htmlCodeString += `<a href="https://88x31.nl/" target="_blank" rel="noopener noreferrer">`;
-            htmlCodeString += `<img src="${ad}" width="88" height="31">`;
+            htmlCodeString += `<img src="${ad}" alt="anuncio">`;
             htmlCodeString += `</a>`;
         }
 
@@ -100,7 +85,7 @@ class FRDanmaku extends HTMLElement {
             "bienvenido a mi pagina",
             "saludos cordiales, mi estimado",
             "(=^·ω·^=)ﾉ",
-            "ジョン・ワークへようこそ。本ウェブサイトへお越しいただき、誠にありがとうございます。"
+            "こんにちは！ジョン・ワークですぼくのウェブページへようこそ！"
         ];
 
         this.style.pointerEvents = "none";
@@ -154,7 +139,7 @@ class FRDanmaku extends HTMLElement {
         textDiv.textContent = inText;
         textDiv.style.position = "absolute";
         textDiv.style.whiteSpace = "nowrap";
-        textDiv.style.fontSize = "3rem";
+        textDiv.style.fontSize = "35px";
         textDiv.style.fontWeight = "bold";
         textDiv.style.color = "#ffffff";
         textDiv.style.webkitTextStroke = "2px #000000";

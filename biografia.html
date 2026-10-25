@@ -1,35 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biografia</title>
     <link rel="stylesheet" href="style.css">
     <script src="framework.js" defer></script>
-    <link rel="icon" type="image/png" href="https://i.redd.it/6u5ellqamjo91.gif" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/neco_arc.webp" sizes="32x32">
 </head>
+
 <body>
-    <header class="banner"></header>
-    <fr-nav></fr-nav>
-    <fr-danmaku></fr-danmaku>
-    <main>
-    <section>
-    <fr-ads count="22"></fr-ads>
-    <h1>Biografia</h1>
-        <div class="info-box">
-            <img
-            src="https://preview.redd.it/infamous-chad-snake-render-edited-as-actual-hollywood-oscar-v0-87lqa0a39nw71.jpg?width=1080&crop=smart&auto=webp&s=e5dcaa13d5a6a3666dab654cce75460e1aee7a1c"
-            id="corp-image"
-            class="info-image"
-            width=200px
-            height=200px>
-            <div>
-                <h2>John Work</h2>
-                <p>Hola que tal. Me llamo John Work y busco trabajo. Espero no encontrarlo jaja. Mis especialidades son el espionaje tactico y <a href="http://www.clubfumadores.org/club_fumadores_decalogobuenfumador.html" target="_blank" rel="noopener noreferrer">fumar bien</a>.</p>
-            </div>
-        </div>
-    <fr-ads count="22"></fr-ads>
-    </section>
-    </main>
+    <div class="grid">
+        <header class="column-span banner banner-neco-arc"></header>
+        <nav class="column-span texture-box navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="biografia.html">Biografia</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section>
+                <h1 class="column-span title">Biografia</h1>
+                <aside class="column-span">
+                    <fr-ads count="16"></fr-ads>
+                </aside>
+                <aside class="column-l">
+                    <fr-ads count="33"></fr-ads>
+                </aside>
+                <article class="column-large info-box">
+                    <div>
+                        <img class="info-img profile-pic" src="assets/solid_snake.jpg" alt="Jhon Work">
+                    </div>
+                    <div class="info-text">
+                        <h2>John Work</h2>
+                        <p>Hola que tal. Me llamo John Work y busco trabajo. Espero no encontrarlo jaja. Mis
+                            especialidades son el espionaje tactico y <a
+                                href="http://www.clubfumadores.org/club_fumadores_decalogobuenfumador.html"
+                                target="_blank">fumar bien</a>.</p>
+                    </div>
+                </article>
+                <aside class="column-r">
+                    <fr-ads count="33"></fr-ads>
+                </aside>
+                <aside class="column-span">
+                    <fr-ads count="16"></fr-ads>
+                </aside>
+            </section>
+        </main>
+        <footer class="column-span texture-box">
+            <p>&copy; 2049 John Work. Todos los derechos reservados.</p>
+            <a href="https://pablo-droid.github.io">johnwork@gmail.com</a>
+        </footer>
+        <fr-danmaku></fr-danmaku>
+    </div>
 </body>
+
 </html>

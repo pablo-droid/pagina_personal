@@ -5,63 +5,99 @@
 }
 
 body {
-    background-color: black;
-    background-image: url("https://64.media.tumblr.com/9e84631ecbc08f880148a8f1d76f6022/0373bd477afbe405-6d/s640x960/226740ef4c3f4f517b059c871430161d14f287b9.gifv");
-    font-family: "Comic Sans MS", "sans-serif";
+    background-image: url(assets/background.gif);
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+main {
+    display: contents;
+}
+
+section {
+    display: contents;
+}
+
+h1 {
+    color: blueviolet;
+    font-size: 1.5rem;
+}
+
+h2 {
+    color: greenyellow;
+    font-size: 1.25rem;
+}
+
+p {
+    color: orange;
+}
+
+a {
+    color: orangered;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+}
+
+.column-span {
+    grid-column: 1 / 2;
+}
+
+.column-large {
+    grid-column: 1 / 2;
+}
+
+.column-l {
+    grid-column: 1 / 2;
+}
+
+.column-r {
+    grid-column: 1 / 2;
 }
 
 .banner {
     height: 50px;
     padding: 10px;
-    background-image: url("https://images.steamusercontent.com/ugc/2421319307286993522/DBCDE752917E8703B62A2C1AFE7B337CB1CD14FD/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
     background-repeat: repeat-x;
     background-size: auto 100%;
 }
 
-nav a {
+.banner-penguin {
+    background-image: url(assets/penguin.gif);
+}
+
+.banner-neco-arc {
+    background-image: url(assets/neco_arc.webp);
+}
+
+.texture-box {
+    padding: 10px;
+    gap: 10px;
+    background-size: 800px 800px;
+    background-image: url("assets/normal_map.jpg");
+    background-blend-mode: multiply;
+    background-color: rgb(255, 0, 98);
+    background-repeat: repeat;
+}
+
+.navigation ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+.navigation a {
     color: orange;
     font-weight: bold;
-    font-size: 1rem;
+    text-decoration: none;
 }
 
-h1, p, label {
-    color: orange;
-}
-
-h2 {
-    color: greenyellow;
-}
-
-h1, h2 {
-    font-size: 2rem;
-}
-
-p {
-    font-size: 1rem;
-}
-
-section {
+.title {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    row-gap: 20px;
-}
-
-fieldset {
-    display: flex;
-    flex-direction: column;
-    border-style: dotted;
-    border-color: orange;
-    border-radius: 10px;
-}
-
-fieldset button {
-    width: max-content;
+    margin: 20px;
 }
 
 .info-box {
@@ -71,68 +107,94 @@ fieldset button {
     border-color: orange;
     border-radius: 10px;
     padding: 10px;
+    margin: 20px;
     flex-wrap: wrap;
+    align-self: start;
 }
 
-.info-box p {
-    max-width: 500px;
+.info-img {
+    width: 100px;
+    height: auto;
+    padding: 5px;
 }
 
-.info-image {
+.info-text {
+    width: 60%;
     padding: 10px;
 }
 
-#welcome-image {
-    display: flex;
-    justify-content: center;
-}
-
-.add-wall {
-    display: flex;
-    justify-content: center;
-    max-width: 1000px;
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
+.profile-pic {
+    border-radius: 50%;
 }
 
 .gallery {
     display: flex;
-    justify-content: center;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
-}
-
-#corp-image {
-    border-radius: 100%;
-}
-
-#neco-arc {
-    background-image: url("https://i.redd.it/6u5ellqamjo91.gif");
-}
-
-a {
-    color: orangered;
-}
-
-.nav-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-image: url("https://static.wixstatic.com/media/38ebb6_801bb3de90f04d9c9535e6034f0fa30d~mv2.jpg/v1/fill/w_261,h_261,q_90,enc_avif,quality_auto/38ebb6_801bb3de90f04d9c9535e6034f0fa30d~mv2.jpg");
     padding: 10px;
-    margin: 10px 20px;
-    background-size: 800px 800px;
-    background-blend-mode: multiply;
-    background-color: rgb(255, 0, 98);
-    background-repeat: repeat;
-    list-style-type: none;
-    flex-wrap: wrap;
 }
 
-@media screen and (width >= 768px) {
-    .nav-list {
+.gallery-img {
+    width: 150px;
+    height: auto;
+    padding: 10px;
+}
+
+@media screen and (width > 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    a,
+    p {
+        font-size: 1.5rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+
+    .column-span {
+        grid-column: 1 / 4;
+    }
+
+    .column-large {
+        grid-column: 2 / 3;
+    }
+
+    .column-l {
+        grid-column: 1 / 2;
+    }
+
+    .column-r {
+        grid-column: 3 / 4;
+    }
+
+    .banner {
+        height: 150px;
+    }
+
+    .navigation ul {
         flex-direction: row;
+        justify-content: space-around;
+        font-size: 1.5rem;
+    }
+
+    .title img {
+        width: 300px;
+        height: auto;
+    }
+
+    .info-img {
+        width: 200px;
+    }
+
+    .gallery-img {
+        width: 250px;
     }
 }
